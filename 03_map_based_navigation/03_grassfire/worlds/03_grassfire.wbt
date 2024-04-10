@@ -1,0 +1,182 @@
+#VRML_SIM R2023b utf8
+
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/backgrounds/protos/TexturedBackground.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/backgrounds/protos/TexturedBackgroundLight.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/floors/protos/RectangleArena.proto"
+EXTERNPROTO "../protos/E-puck.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/apartment_structure/protos/Wall.proto"
+EXTERNPROTO "../protos/Roughcast.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/appearances/protos/BrushedAluminium.proto"
+
+WorldInfo {
+  FPS 30
+}
+Viewpoint {
+  orientation -0.5773502691896258 0.5773502691896258 0.5773502691896258 2.0944
+  position 0.00025548537445435984 4.967102064338267e-05 4.2612533040312455
+  follow "e-puck"
+  followType "None"
+}
+TexturedBackground {
+}
+TexturedBackgroundLight {
+  luminosity 1.5
+  castShadows FALSE
+}
+DEF ARENA RectangleArena {
+  name "arena"
+  floorSize 1.8 1.8
+  floorTileSize 0.4 0.4
+  wallThickness 0.2
+  wallAppearance BrushedAluminium {
+    colorOverride 0 0 0
+  }
+}
+Wall {
+  translation 0.8 0.4 0
+  name "wall(12)"
+  size 0.2 0.2 0.1
+  appearance Roughcast {
+    colorOverride 0 0 0
+    textureTransform TextureTransform {
+      scale 2.4 1
+    }
+  }
+}
+Wall {
+  translation 0.2 -0.2 0
+  name "wall(7)"
+  size 0.2 0.6 0.1
+  appearance Roughcast {
+    colorOverride 0 0 0
+    textureTransform TextureTransform {
+      scale 2.4 1
+    }
+  }
+}
+Wall {
+  translation -0.1 -0.6 0
+  name "wall(6)"
+  size 1.6 0.2 0.1
+  appearance Roughcast {
+    colorOverride 0 0 0
+    textureTransform TextureTransform {
+      scale 2.4 1
+    }
+  }
+}
+Wall {
+  translation -0.5 0.6 0
+  name "wall(1)"
+  size 0.4 0.2 0.1
+  appearance Roughcast {
+    colorOverride 0 0 0
+    textureTransform TextureTransform {
+      scale 2.4 1
+    }
+  }
+}
+Wall {
+  translation 0.2 0.4 0
+  name "wall(8)"
+  size 0.6 0.2 0.1
+  appearance Roughcast {
+    colorOverride 0 0 0
+    textureTransform TextureTransform {
+      scale 2.4 1
+    }
+  }
+}
+Wall {
+  translation -0.2 0.3 0
+  name "wall(5)"
+  size 0.2 0.8 0.1
+  appearance Roughcast {
+    colorOverride 0 0 0
+    textureTransform TextureTransform {
+      scale 2.4 1
+    }
+  }
+}
+Wall {
+  translation -0.4 -0.2 0
+  name "wall(4)"
+  size 0.6 0.2 0.1
+  appearance Roughcast {
+    colorOverride 0 0 0
+    textureTransform TextureTransform {
+      scale 2.4 1
+    }
+  }
+}
+Wall {
+  translation 0.6 0.2 0
+  name "wall(3)"
+  size 0.2 0.6 0.1
+  appearance Roughcast {
+    colorOverride 0 0 0
+    textureTransform TextureTransform {
+      scale 2.4 1
+    }
+  }
+}
+Wall {
+  translation 0.2 0.8 0
+  name "wall(10)"
+  size 0.2 0.2 0.1
+  appearance Roughcast {
+    colorOverride 0 0 0
+    textureTransform TextureTransform {
+      scale 2.4 1
+    }
+  }
+}
+Wall {
+  translation 0.6 -0.4 0
+  name "wall(11)"
+  size 0.2 0.2 0.1
+  appearance Roughcast {
+    colorOverride 0 0 0
+    textureTransform TextureTransform {
+      scale 2.4 1
+    }
+  }
+}
+Wall {
+  translation 0.6 0.6 0
+  name "wall(2)"
+  size 0.2 0.2 0.1
+  appearance Roughcast {
+    colorOverride 0 0 0
+    textureTransform TextureTransform {
+      scale 2.4 1
+    }
+  }
+}
+Wall {
+  translation -0.7 0.2 0
+  name "wall(9)"
+  size 0.4 0.2 0.1
+  appearance Roughcast {
+    colorOverride 0 0 0
+    textureTransform TextureTransform {
+      scale 2.4 1
+    }
+  }
+}
+DEF E-PUCK E-puck {
+  hidden position_0_0 1.0965849722095245e-08
+  hidden position_0_1 1.0966659936783555e-08
+  translation -0.8 0.8000000000012242 -3.3229265433039334e-05
+  rotation 1 0 0 7.481704113803029e-05
+  controller "controller_grassfire"
+  supervisor TRUE
+  camera_width 426
+  camera_height 240
+  turretSlot [
+    Compass {
+    }
+    GPS {
+    }
+  ]
+}

@@ -1,0 +1,54 @@
+#VRML_SIM R2023b utf8
+
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/backgrounds/protos/TexturedBackground.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/backgrounds/protos/TexturedBackgroundLight.proto"
+EXTERNPROTO "../protos/E-puck.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/apartment_structure/protos/Wall.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/floors/protos/RectangleArena.proto"
+
+WorldInfo {
+  FPS 30
+}
+Viewpoint {
+  orientation -0.5773502691896258 0.5773502691896258 0.5773502691896258 2.0944
+  position 2.1201009644272153 0.6300023116441145 10.657168499906662
+  follow "e-puck"
+  followType "None"
+}
+TexturedBackground {
+}
+TexturedBackgroundLight {
+  castShadows FALSE
+}
+Wall {
+  translation 1.12 0.63 0
+  name "wall(3)"
+  size 1 1 0.2
+}
+DEF ARENA RectangleArena {
+  translation 2.12 0.63 0
+  name "arena"
+  floorSize 5.5 3
+}
+Wall {
+  translation 3.12 0.63 0
+  name "wall(1)"
+  size 1 1 0.2
+}
+DEF E-PUCK E-puck {
+  controller "controller_APF"
+  supervisor TRUE
+  camera_width 426
+  camera_height 240
+  turretSlot [
+    Lidar {
+      translation 0 0 0.003
+      fieldOfView 3.14
+      numberOfLayers 1
+    }
+    Compass {
+    }
+    GPS {
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+#VRML_SIM R2023b utf8
+
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/backgrounds/protos/TexturedBackground.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/backgrounds/protos/TexturedBackgroundLight.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/floors/protos/RectangleArena.proto"
+EXTERNPROTO "../protos/E-puck.proto"
+
+WorldInfo {
+  FPS 30
+}
+Viewpoint {
+  orientation -0.19806292595133365 0.09944543709803157 0.9751316231176066 2.2307946449550107
+  position 3.6986979353448373 -4.962487013120766 2.664733265817761
+  follow "e-puck"
+  followType "None"
+}
+TexturedBackground {
+}
+TexturedBackgroundLight {
+  castShadows FALSE
+}
+DEF ARENA RectangleArena {
+  name "arena"
+  floorSize 7 7
+  floorTileSize 2 2
+}
+DEF E-PUCK E-puck {
+  controller "controller_sigue_trayectoria_purePursuit"
+  supervisor TRUE
+  camera_width 426
+  camera_height 240
+  turretSlot [
+    Lidar {
+      translation 0 0 0.003
+      fieldOfView 3.14
+      numberOfLayers 1
+    }
+    Compass {
+    }
+    GPS {
+    }
+  ]
+}
